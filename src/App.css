@@ -1,38 +1,99 @@
 .App {
+  max-width: 1550px;
+  width: 100%;
+  min-width: 100vh;
   text-align: center;
+  margin: 0 auto;
+  /* box-shadow: 0 5px 6px  #08a05c; */
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ------- imagebes Baners-------- */
+.imagen-baner{ 
+  width: 1215px;
+  height: 550px;
+} 
+/* -------Barra Menu-------- */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-Layout{
+  min-height: 100%;
+  max-width: 1530px;
+  overflow: hiden;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+.container-Layout ul li{
+  padding: 0 1rem;
+  
+}
+.container-Layout ul li a{
+  font-weight: bold;
+  
+}
+
+
+/* --------------Boton---------- */
+.buttom .btn{
+  background-color: rgb(255, 255, 255); 
+  color: black; 
+  border: 2px solid #1d1e1e;
+}
+.buttom button{
   color: white;
+  /* padding: 15px 28px; */
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+/* --------Fomulario----------- */
+.wrapeer{
+  height: 100vp;
+
+}
+.login{
+  width: 300px;
+  height: min-content;
+  border-radius: 5px;
+color: black;
+  background-color:rgb(214, 233, 233) ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------MEDIA--------------------- */
+@media only screen and (max-windth: 600px){
+  .container-heder ul{
+    display: none ;
   }
 }
+
+
+
+
+
