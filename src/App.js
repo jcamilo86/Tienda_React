@@ -5,8 +5,9 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Default from "./pages/Default";
 import Dashboard from "./pages/Dashboard";
-import Formulario from "./Formulario/Frormulario";
-import Usuarios from "./Backend/Usuarios";
+import Formulario from "./Formulario/Formulario";
+import Register from "./pages/Register";
+
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
 
         </Route>
       </Routes>
-      <Usuarios/>
-      <Formulario/>
+     
+      <Formulario/> 
+      <Register/>
     </div>
   );
 }
