@@ -17,34 +17,36 @@
 /* -------Barra Menu-------- */
 
 .container-Layout{
-  min-height: 100%;
-  max-width: 1530px;
-  overflow: hiden;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  box-sizing: border-box;
+  justify-content: flex-end; 
 }
 
-li{
-  list-style: none;
+.main-menu li{
+  list-style: none;  
+  margin: 10px;
+  font-size: 25px;
 }
 
-.container-Layout ul li{
-  padding: 0 1rem;
-  
+/* //------- */
+.main-menu  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+  padding-bottom: 30px;
 }
-.container-Layout ul li a{
-  font-weight: bold;
-  
+.main-menu .btns {
+  border: 2px solid #807e7d;
+  padding: .25rem;
+  border-radius: .2rem;
 }
-
 
 /* --------------Boton---------- */
 .buttom .btn{
   background-color: rgb(255, 255, 255); 
   color: black; 
-  border: 2px solid #1d1e1e;
+  border: 2px solid #7d8484;
 }
 .buttom button{
   color: white;
@@ -59,6 +61,38 @@ li{
   text-decoration: none;
   text-transform: uppercase;
 }
+/*------otro menu---*/
+
+
+/* --------PRODUCTOS-------------- */
+/* .espaciado{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  
+   padding: 5rem 2rem;
+  margin: 0 auto;
+  grid:3rem 1rem ;
+  box-sizing: border-box;  
+ 
+.imgen img{
+  width: 160%;
+  height: 430px;
+} */
+
+.continer1{
+  display: flex;
+justify-content: 
+
+
+
+}
+.imgen img{
+  width:200px ;
+  height: 324px;
+}
+
+ 
+
+
 
 /* --------Fomulario----------- */
 .wrapeer{
@@ -72,26 +106,19 @@ li{
 color: black;
   background-color:rgb(214, 233, 233) ;
 }
+.containerPrincipal {
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid blue;
+    padding: 40px;
+    background-color: white;
+}
 
-.espaciado{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  /* gap: 20px;  */
-  padding: 5rem 2rem;
-  margin: 0 auto;
-  grid:3rem 1rem ;
-  box-sizing: border-box; 
-} 
-
-
-
-
-
-
-
-
-
-
+.containerSecundario{
+  text-align: center;
+}
 
 
 /* -----------------------MEDIA--------------------- */
@@ -99,6 +126,21 @@ color: black;
   .container-heder ul{
     display: none ;
   }
+}
+/*------table-------*/
+@media (max-width: 952px){
+  nav ul li a{
+      font-size: 16px;
+  }
+
+}
+/* ----------celular------------ */
+@media (max-width: 858px){
+   nav ul li a{
+      display: block;
+  } 
+  
+
 }
 
 
