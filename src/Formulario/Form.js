@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import clienteAxios from '../config/axiosClient'
 
 export default function Formulario() {
   const Navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log(formData); 
+    console.log(formData);
+    clienteAxios(formData)
+    console.log("despues de axios");
   };
   const handleSubmitChange = (key, value) => {
     setFormData((prevState) => ({
@@ -15,6 +18,7 @@ export default function Formulario() {
       [key]: value,
     }));
   };
+  
   return (
     <div className="containerPrincipal">
       <h1>Iniciar sesión</h1>
@@ -42,7 +46,7 @@ export default function Formulario() {
             />
             <br />
             <button className="btn btn-primary" type="submit">
-              Iniciar Sesión
+            Iniciar sesiòn
             </button>
           </div>
         </div>

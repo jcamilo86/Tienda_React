@@ -19,7 +19,7 @@ export default function Section({ title, imgeSource }) {
 
             <br />
             <div className="buttom">
-              <button className="btn">Añadir al carrito</button>
+              <button className="btn" >Añadir al carrito</button>
             </div>
           </div>
         </div>

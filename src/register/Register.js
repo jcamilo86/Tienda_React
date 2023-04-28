@@ -72,7 +72,7 @@ export default function Register() {
               />
               <br />
               <button className="btn btn-primary" type="submit">
-                Iniciar Sesión
+                Registrarse
               </button>
             </div>
           </div>
