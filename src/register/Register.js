@@ -1,23 +1,39 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState,createContext } from "react";
-import clienteAxios from '../config/axiosClient'
+import { useState, createContext } from "react";
+import clienteAxios from "../config/axiosClient";
 
-
-export const UserContext = createContext()
+export const UserContext = createContext();
 
 export default function Register() {
   const Navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
+    username: "",
     email: "",
     password: "",
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
-    clienteAxios
+    fetch("http://localhost:4000/user/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => (console.log(data)))
+
+    /* Limpiar el formulario después de enviar la data */
+    setFormData({
+      name: "",
+      lastname: "",
+      username: "",
+      email: "",
+      password: "",
+    })
   };
   const handleSubmitChange = (key, value) => {
     setFormData((prevState) => ({
@@ -49,6 +65,16 @@ export default function Register() {
                 className="form-control"
                 onChange={(event) =>
                   handleSubmitChange("lastname", event.target.value)
+                }
+              />
+              <br />
+              <label>Nombre de usuario: </label>
+              <br />
+              <input
+                type="text"
+                className="form-control"
+                onChange={(event) =>
+                  handleSubmitChange("username", event.target.value)
                 }
               />
               <br />

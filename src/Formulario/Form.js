@@ -5,12 +5,31 @@ import clienteAxios from '../config/axiosClient'
 export default function Formulario() {
   const Navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
-  
-  const handleSubmit = (event) => {
+  const [token, setToken] = useState(undefined)
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-    clienteAxios(formData)
-    console.log("despues de axios");
+    /* clienteAxios(formData) */
+    /* Copiamos el fetch pero para hacer login */
+    await fetch("http://localhost:4000/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => setToken(data.token) & localStorage.setItem("token", token))
+
+    if (token) {
+      Navigate("/")
+    } else {
+      alert("Hubo un problema")
+    }
+
+
+
   };
   const handleSubmitChange = (key, value) => {
     setFormData((prevState) => ({
@@ -18,7 +37,7 @@ export default function Formulario() {
       [key]: value,
     }));
   };
-  
+
   return (
     <div className="containerPrincipal">
       <h1>Iniciar sesión</h1>
@@ -46,7 +65,7 @@ export default function Formulario() {
             />
             <br />
             <button className="btn btn-primary" type="submit">
-            Iniciar sesiòn
+              Iniciar sesiòn
             </button>
           </div>
         </div>

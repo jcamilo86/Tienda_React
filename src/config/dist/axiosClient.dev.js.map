@@ -1,0 +1,1 @@
+{"version":3,"sources":["axiosClient.js"],"names":["axiosClient"],"mappings":";;;;;;;AAAA;;;;AAEA;;;eAIeA,W","sourcesContent":["import axios from \"axios\";\r\n\r\n/* const axiosClient = axios.create({\r\n  baseURL: process.env.REACT_APP_BACKEND_URL,\r\n}); */\r\n\r\nexport default axiosClient;\r\n"],"file":"axiosClient.dev.js"}
